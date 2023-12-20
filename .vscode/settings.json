@@ -1,0 +1,11 @@
+{
+  "cSpell.words": [
+    "typecheck"
+  ],
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  }
+}

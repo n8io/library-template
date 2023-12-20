@@ -1,0 +1,49 @@
+{
+  "name": "___NAME___",
+  "description": "___DESCRIPTION___",
+  "version": "0.0.0",
+  "issues": {
+    "url": "___REPO_URL___/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "___REPO_URL___"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf ./dist && tsup src/index.ts --treeshake --format cjs,esm --dts",
+    "changeset": "npx changeset",
+    "format": "biome check --apply **/*.ts",
+    "lint": "biome lint ./src && tsc",
+    "release": "pnpm run build && pnpm update-badge && changeset publish",
+    "test": "vitest --coverage"
+  },
+  "author": {
+    "name": "Nate Clark",
+    "url": "https://github.com/n8io"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist/**/*.*"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "packageManager": "pnpm",
+  "publishConfig": {
+    "access": "public"
+  },
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@biomejs/biome": "^1",
+    "@changesets/cli": "^2",
+    "@types/node": "^18",
+    "@vitest/coverage-v8": "^1",
+    "check-code-coverage": "^1",
+    "lefthook": "^1",
+    "tsup": "^8",
+    "typescript": "^5",
+    "vitest": "^1"
+  }
+}
